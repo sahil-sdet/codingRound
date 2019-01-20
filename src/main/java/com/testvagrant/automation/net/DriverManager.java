@@ -1,6 +1,5 @@
 package com.testvagrant.automation.net;
 
-
 import com.testvagrant.automation.utils.ChromeUtils;
 import com.testvagrant.automation.utils.FirefoxUtils;
 import com.testvagrant.automation.utils.PropertyUtil;
@@ -13,7 +12,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
-import org.testng.annotations.BeforeSuite;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -35,7 +33,6 @@ public class DriverManager {
         throw new IllegalStateException("Utility class");
     }
 
-    @BeforeSuite
     public static void beforeSuite(ITestContext testContext){
         DriverManager.testContext = testContext;
         if (!PROPERTIES_INITIALIZED) {
@@ -56,6 +53,8 @@ public class DriverManager {
         logger.info("ChromeDriver...");
         ChromeOptions options = ChromeUtils.getChromeOptions();
         try {
+            System.setProperty("webdriver.chrome.driver"
+                    , System.getProperty("user.dir") + "/src/main/resources/drivers/chromedriver_mac");
             return new ChromeDriver(options);
         } catch (IllegalStateException e) {
             logger.warn(e.getMessage());
@@ -97,7 +96,7 @@ public class DriverManager {
             }
             windowHandles = new LinkedHashSet<>();
             windowHandles.add(driver.getWindowHandle());
-            wait = new WebDriverWait(driver, 5);
+            wait = new WebDriverWait(driver, 10);
             driver.navigate().to(PropertyUtil.getBaseUrl());
         }
         return driver;

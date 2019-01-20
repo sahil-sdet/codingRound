@@ -3,9 +3,7 @@
 <suite name="Suite" verbose="1" >
     <test name="Search Flights" >
         <classes>
-            <class name="FlightBookingTest" />
+            <class name="com.testvagrant.automation.tests.flights.FlightBookingTest"/>
         </classes>
     </test>
-
-
 </suite>
