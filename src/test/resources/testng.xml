@@ -6,4 +6,10 @@
             <class name="com.testvagrant.automation.tests.flights.FlightBookingTest"/>
         </classes>
     </test>
+
+    <test name="SignIn Errors Test" >
+        <classes>
+            <class name="com.testvagrant.automation.tests.login.SignInTest"/>
+        </classes>
+    </test>
 </suite>

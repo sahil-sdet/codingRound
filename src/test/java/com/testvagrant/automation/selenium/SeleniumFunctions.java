@@ -5,11 +5,13 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * created by sahil.kashyap on 20/01/19
@@ -76,7 +78,7 @@ public class SeleniumFunctions {
     }
 
     public static void waitUntil(By elementBy) {
-       WebDriverWait wait = DriverManager.getWait();
+        WebDriverWait wait = DriverManager.getWait();
         if (DriverManager.getDriver() != null) {
             wait.until(ExpectedConditions.visibilityOfElementLocated(elementBy));
         } else {
@@ -85,13 +87,48 @@ public class SeleniumFunctions {
         }
     }
 
-    public static void threadSleep(int waitMillis) {
-        try {
-            Thread.sleep(waitMillis);
-        } catch (InterruptedException e) {
-            logger.info("Error on thread sleeping.");
+    public static void waitUntilInvisibility(By elementBy) {
+        WebDriverWait wait = DriverManager.getWait();
+        if (DriverManager.getDriver() != null) {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(elementBy));
+        } else {
+            logger.error("Driver is not initialized or browser is now closed.");
+            throw new WebDriverException("Driver is not initialized or browser is now closed.");
         }
     }
 
+    public static void SelectValue(By elementBy, String optionValue) {
 
-}
+        if (DriverManager.getDriver() != null) {
+            try {
+                DriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                DriverManager.getWait().until(ExpectedConditions.visibilityOfElementLocated(elementBy));
+                Select dropdown = new Select(DriverManager.getDriver().findElement(elementBy));
+                dropdown.selectByVisibleText(optionValue);
+                logger.info("Value selected from dropdown for " + elementBy.toString() + " as :" + optionValue);
+            } catch (ElementNotVisibleException e) {
+                logger.error("WebElement(dropdown) not found hence unable to select value:" + optionValue);
+                throw (e);
+            } catch (Exception e) {
+                logger.error("Exception occurred while selecting value from dropdown:" + e.getMessage());
+                e.printStackTrace();
+                throw (e);
+            }
+
+        } else {
+            logger.error("Driver is not initialized or browser is now closed.");
+            throw new WebDriverException("Driver is not initialized or browser is now closed.");
+        }}
+
+        public static void Submit(){
+        DriverManager.getDriver().findElement(By.className("submit")).submit();
+        }
+
+        public static void threadSleep(int waitMillis){
+            try {
+                Thread.sleep(waitMillis);
+            } catch (InterruptedException e) {
+                logger.info("Error on thread sleeping.");
+            }
+        }
+    }

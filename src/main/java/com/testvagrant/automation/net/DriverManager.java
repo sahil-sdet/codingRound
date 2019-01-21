@@ -138,9 +138,8 @@ public class DriverManager {
         return alert != null;
     }
 
-    public static Alert switchToAlert() {
-        alert = DriverManager.getDriver().switchTo().alert();
-        return alert;
+    public static void switchToFrame(String frameId) {
+        DriverManager.getDriver().switchTo().frame(frameId);
     }
 
     public static Alert getAlert() {
