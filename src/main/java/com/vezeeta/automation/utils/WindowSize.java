@@ -1,4 +1,4 @@
-package com.testvagrant.automation.utils;
+package com.vezeeta.automation.utils;
 
 import org.apache.log4j.Logger;
 

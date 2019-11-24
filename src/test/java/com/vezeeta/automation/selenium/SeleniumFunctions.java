@@ -1,6 +1,6 @@
-package com.testvagrant.automation.selenium;
+package com.vezeeta.automation.selenium;
 
-import com.testvagrant.automation.net.DriverManager;
+import com.vezeeta.automation.net.DriverManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -13,9 +13,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/**
- * created by sahil.kashyap on 20/01/19
- */
 public class SeleniumFunctions {
 
     final static Logger logger = Logger.getLogger(SeleniumFunctions.class);

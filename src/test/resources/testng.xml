@@ -1,20 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite" verbose="1" >
-  <test name="Search Flights" >
+  <test name="Google Search" >
         <classes>
-            <class name="com.testvagrant.automation.tests.flights.FlightBookingTest"/>
-        </classes>
-    </test>
-
-    <test name="SignIn Errors Test" >
-        <classes>
-            <class name="com.testvagrant.automation.tests.login.SignInTest"/>
-        </classes>
-    </test>
-    <test name="Search Hotels" >
-        <classes>
-            <class name="com.testvagrant.automation.tests.hotels.HotelBookingTest"/>
+            <class name="com.vezeeta.automation.tests.search.GoogleSearchTest"/>
         </classes>
     </test>
 

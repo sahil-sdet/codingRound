@@ -25,12 +25,9 @@ Two locator strategies have been used.
 1. reading Locators from PropertyFiles.
 2. defining locators in class itself.
 
-##Notes
-Since Hotels Finding Api is taking more than expected times(in minutes). Therefore its failing. Did not hardCoded wait for
-such a long time.
 
 ##Abstraction
-Used abstraction in case of complex functionalities like picking date from DatePicker
+Used abstraction in case of complex functionalities like picking Web Search results 
 
 
 ##Incase you face Driver-Browser Mismatch=Exception

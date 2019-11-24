@@ -1,4 +1,4 @@
-package com.testvagrant.automation.utils;
+package com.vezeeta.automation.utils;
 
 
 import javafx.util.Pair;
@@ -9,9 +9,6 @@ import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Properties;
 
-/**
- * created by sahil.kashyap on 20/01/19
- */
 public class PropertyUtil {
 
     public static Properties properties;

@@ -1,8 +1,8 @@
-package com.testvagrant.automation.net;
+package com.vezeeta.automation.net;
 
-import com.testvagrant.automation.utils.ChromeUtils;
-import com.testvagrant.automation.utils.FirefoxUtils;
-import com.testvagrant.automation.utils.PropertyUtil;
+import com.vezeeta.automation.utils.ChromeUtils;
+import com.vezeeta.automation.utils.FirefoxUtils;
+import com.vezeeta.automation.utils.PropertyUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,9 +16,6 @@ import org.testng.ITestContext;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-/**
- * created by sahil.kashyap on 20/01/19
- */
 public class DriverManager {
 
     private static final Logger logger = Logger.getLogger(DriverManager.class);
