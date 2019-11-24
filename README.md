@@ -1,35 +1,26 @@
-Things which I worked on
+TestVagrant hiring challenge for applicants
+About the codebase:
+This is a simple test project for testing a few scenarios on a sample flight/hotel booking website. There are 3 tests in total spread over 3 test classes. Following tech stack has been used to develop the same.
 
-1. Modularized framework by creating separate files for creating Driver,
- performing actions like click, enter text etc (Seleniumfunctions), a PropertyUtility.
-2. Added Logging Support
-3. Handled Exceptions
-4. Implemented Locators Finding Strategies
-5. Multi Country Support. We can have different property files for different countries and run it by defining
-profile in pom.xml and supplying in run command. eg mvn test -Pindia
-6. Tried to add sup[port for FireFox as well
+Tech Stack: Java Selenium TestNG Gradle/Maven
 
-##Things I could not cover
-1. Could not work on Reporting due to busy schedule
-2. Could not work on capturing screen shots part.
+Problem Statement
+Tasks:
 
+Test are failing which needs your expertise to fix it.
+Review and point out design issues with the current codebase/framework, if any.
+Improve/refactor the code to implement your suggestions.
+Expectation:
 
+Create a GitHub account if not existing already.
+Fork this repo (DO NOT CLONE).
+Fix the errors and refactor the code, consider abstractions, reusability and maintenance.
+Make sure you make multiple check-ins in the process, we would love to see your progress bit by bit.
+Also check-in a separate file where you should list all your code review comments.
+Send us the link of your GitHub repo to careers@testvagrant.com. Also attach your resume.
+The parameters of evaluation:
 
-###Commands to Run Tests
-mvn clean install -Pindia
-mvn test -Pindia
-
-
-##Locator Stragies
-Two locator strategies have been used.
-1. reading Locators from PropertyFiles.
-2. defining locators in class itself.
-
-
-##Abstraction
-Used abstraction in case of complex functionalities like picking Web Search results
-
-
-##Incase you face Driver-Browser Mismatch=Exception
-Please copy the drive (compatible to your machine browser) in src/main/resources/driver/ and update
-in DriverManager.createChromeDriver() or DriverManager.createFireFoxDriver() accordingly.
+Naming Conventions & readability of code
+Modularization & Abstraction
+Demonstration of OO concepts & Design Patterns
+Etiquette of Version control
